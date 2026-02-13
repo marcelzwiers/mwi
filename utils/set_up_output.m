@@ -55,7 +55,7 @@ if isfield(imgPara,'identifier')
 
     % check if the temporary file exists
     if ~exist([temp_prefix identifier '.mat'],'file')
-        error('Cannot detect the temporary file with the provided identifier. Please enter a valid identifier or remove the input identifier');
+        warning('MWI:IdentifierFile:NotFound', 'Cannot detect the temporary file with the provided identifier "%s". Please enter a valid identifier or remove the input identifier', identifier);
     end
 else
     % create a new identifier if not provided
