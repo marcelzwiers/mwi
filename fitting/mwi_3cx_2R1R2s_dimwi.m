@@ -707,11 +707,12 @@ end
 
 iterations = output.iterations;
 
-catch 
+catch ME
     x           = zeros(size(x0));
     res         = 0 ;
     exitflag    = 99;
     iterations  = 0;
+    warning('MWI:MCR:OptimizationError', getReport(ME,'extended'))
 end
 
 end
